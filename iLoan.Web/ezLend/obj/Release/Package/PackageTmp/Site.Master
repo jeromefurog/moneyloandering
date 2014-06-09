@@ -1,0 +1,173 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ezLend.Site" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <title>Money Loandering</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  
+
+    <!-- Bootstrap core CSS -->
+    <link href="js/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+	<link rel="stylesheet" href="fonts/font-awesome-4/css/font-awesome.min.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="js/jquery.nanoscroller/nanoscroller.css" />
+    <link rel="stylesheet" type="text/css" href="js/jquery.easypiechart/jquery.easy-pie-chart.css" />
+	<link rel="stylesheet" type="text/css" href="js/bootstrap.switch/bootstrap-switch.css" />
+	<link rel="stylesheet" type="text/css" href="js/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css" />
+	<link rel="stylesheet" type="text/css" href="js/jquery.select2/select2.css" />
+	<link rel="stylesheet" type="text/css" href="js/bootstrap.slider/css/slider.css" />
+    <link rel="stylesheet" type="text/css" href="js/jquery.datatables/bootstrap-adapter/css/datatables.css" />
+    <link rel="stylesheet" type="text/css" href="js/jquery.gritter/css/jquery.gritter.css" />
+    <link href="css/jquery.nouislider.min.css" rel="stylesheet" type="text/css" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.nanoscroller/jquery.nanoscroller.js"></script>
+	<script type="text/javascript" src="js/behaviour/general.js"></script>
+    <script src="js/jquery.ui/jquery-ui.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery.sparkline/jquery.sparkline.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easypiechart/jquery.easy-pie-chart.js"></script>
+	<script type="text/javascript" src="js/jquery.nestable/jquery.nestable.js"></script>
+	<script type="text/javascript" src="js/bootstrap.switch/bootstrap-switch.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/jquery.select2/select2.min.js" type="text/javascript"></script>
+    <script src="js/skycons/skycons.js" type="text/javascript"></script>
+    <script src="js/bootstrap.slider/js/bootstrap-slider.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script type="text/javascript" src="js/jquery.gritter/js/jquery.gritter.min.js"></script>
+    <script src="js/jquery.nouislider.min.js" type="text/javascript"></script>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //initialize the javascript
+            App.init();
+            //App.dashBoard();
+        });
+    </script>
+    <script src="js/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.flot/jquery.flot.js"></script>
+	<script type="text/javascript" src="js/jquery.flot/jquery.flot.pie.js"></script>
+	<script type="text/javascript" src="js/jquery.flot/jquery.flot.resize.js"></script>
+	<script type="text/javascript" src="js/jquery.flot/jquery.flot.labels.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            if ($('#<%=hdError.ClientID%>').length) {
+                if ($('#<%=hdError.ClientID%>').val() != '') {
+
+                    $.gritter.add({
+                        title: 'Attention!',
+                        text: $('#<%=hdError.ClientID%>').val(),                        
+                        time: ''
+                    });
+                } 
+            }
+
+        });
+                
+    </script>
+
+    <!-- Preloader -->
+    <script type="text/javascript">
+	    //<![CDATA[
+        $(window).load(function () { // makes sure the whole site is loaded
+            $('#status').fadeOut(); // will first fade out the loading animation
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+            $('body').delay(350).css({ 'overflow': 'visible' });
+        })
+	    //]]>
+    </script> 
+                
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Fixed navbar -->
+        <div id="head-nav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    
+                    <a class="navbar-brand" href="#"><span>MoneyLoandering</span></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    
+                    <ul class="nav navbar-nav navbar-right user-nav">
+                      <li class="dropdown profile_menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img id='imgPic' runat='server' style='height:30px;width:30px;' alt="Avatar" src="images/avatar2.jpg" /><span id='spUserName' runat='server'></span> <b class="caret"></b></a>
+                        
+                        <ul class="dropdown-menu">
+                          <%--<li><a href="#">My Account</a></li>--%>
+                          <li><asp:LinkButton ID="LinkButton2" runat='server' onclick="aProfile_Click">Profile</asp:LinkButton></li>
+                          <%--<li><a href="#">Messages</a></li>--%>
+                          <li class="divider"></li>
+                          <%--<li><a href="#">Sign Out</a></li>--%>
+                          <li><asp:LinkButton ID="LinkButton1" runat='server' onclick="aLogout_Click">Sign Out</asp:LinkButton></li>
+                        </ul>
+                      </li>
+                    </ul>			
+                    
+
+              </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    
+        <div id="cl-wrapper">
+		    <div class="cl-sidebar">
+			    <div class="cl-toggle"><i class="fa fa-bars"></i></div>
+			    <div class="cl-navblock">
+				    <ul class="cl-vnavigation">
+					    <li><a href="Default.aspx"><i class="fa fa-home"></i>Dashboard</a></li>
+                        <!--<li id='liAdminDashboard' runat='server'><a href="AdminDefault.aspx"><i class="fa fa-home"></i>Admin Dashboard</a></li>-->
+					    <li id='liUsers' runat='server'><a href="ManageUsers.aspx"><i class="fa fa-user"></i>Users</a></li>
+                        <li id='liInvestments' runat='server'><a href="ManageInvestors.aspx"><i class="fa fa-money"></i>Investments</a></li>
+                        <li id='liLoans' runat='server'><a href="ManageLoans.aspx"><i class="fa fa-credit-card"></i>Loans</a></li>
+                        <li id='liPayables' runat='server'><a href="ManagePayables.aspx"><i class="fa fa-suitcase"></i>Payables</a></li>
+                        <li id='liWithdrawals' runat='server'><a href="ManageWithdrawals.aspx"><i class="fa fa-external-link"></i>Withdrawals</a></li>
+                        <li id='li2' runat='server'><asp:LinkButton ID="LinkButton3" runat='server' onclick="aLogout_Click"><i class="fa fa-sign-out"></i>Sign Out</asp:LinkButton></li>                        
+                        
+				    </ul>
+			    </div>
+		    </div>
+	
+		    <div class="container-fluid" id="pcont">                
+                    
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    
+                    </asp:ContentPlaceHolder>
+		    </div>
+	    </div>      
+        
+        <asp:HiddenField ID="hdError" runat="server" />
+    
+    </form>
+
+    <!-- Preloader -->
+    <div id="preloader">
+	    <div id="status">&nbsp;</div>
+    </div>
+</body>
+</html>

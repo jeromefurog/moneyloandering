@@ -1,0 +1,7 @@
+D:\Solutions\iLoan\iLoan.Web\iLoan.Web\bin\iLoan.Web.dll
+D:\Solutions\iLoan\iLoan.Web\iLoan.Web\bin\iLoan.Web.pdb
+D:\Solutions\iLoan\iLoan.Web\iLoan.Web\bin\iLoan.Core.dll
+D:\Solutions\iLoan\iLoan.Web\iLoan.Web\bin\iLoan.Core.pdb
+D:\Solutions\iLoan\iLoan.Web\iLoan.Web\obj\Debug\ResolveAssemblyReference.cache
+D:\Solutions\iLoan\iLoan.Web\iLoan.Web\obj\Debug\iLoan.Web.dll
+D:\Solutions\iLoan\iLoan.Web\iLoan.Web\obj\Debug\iLoan.Web.pdb

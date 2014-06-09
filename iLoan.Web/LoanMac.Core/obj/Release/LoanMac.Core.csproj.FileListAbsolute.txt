@@ -1,0 +1,4 @@
+D:\iLoan\iLoan.Web\LoanMac.Core\bin\Release\LoanMac.Core.dll
+D:\iLoan\iLoan.Web\LoanMac.Core\bin\Release\LoanMac.Core.pdb
+D:\iLoan\iLoan.Web\LoanMac.Core\obj\Release\LoanMac.Core.dll
+D:\iLoan\iLoan.Web\LoanMac.Core\obj\Release\LoanMac.Core.pdb
