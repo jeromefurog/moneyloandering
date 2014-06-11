@@ -62,11 +62,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChangePassword.aspx" />
-    <Content Include="Default.aspx" />
-    <Content Include="Error.aspx" />
+    <Content Include="ApplyLoan.aspx" />
+    <Content Include="ApproveLoan.aspx" />
+    <Content Include="Error.html" />
+    <Content Include="ForgetPassword.aspx" />
+    <Content Include="NewExpense.aspx" />
+    <Content Include="ManageExpenses.aspx" />
+    <Content Include="AdminDefault.aspx" />
     <Content Include="images\default_pic.png" />
     <Content Include="images\status.gif" />
     <Content Include="ManagePayables.aspx" />
+    <Content Include="pages-404.html" />
     <Content Include="PayLoan.aspx" />
     <Content Include="ViewLoan.aspx" />
     <Content Include="NewLoan.aspx" />
@@ -79,7 +85,7 @@
     <Content Include="ManageInvestors.aspx" />
     <Content Include="css\pygments.css" />
     <Content Include="css\style.css" />
-    <Content Include="Default_1.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="fonts\font-awesome-4\css\font-awesome.min.css" />
     <Content Include="images\arrow.png" />
     <Content Include="images\avatar1_50.jpg" />
@@ -173,19 +179,47 @@
     <Compile Include="ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="ApplyLoan.aspx.cs">
+      <DependentUpon>ApplyLoan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="ApplyLoan.aspx.designer.cs">
+      <DependentUpon>ApplyLoan.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Error.aspx.cs">
-      <DependentUpon>Error.aspx</DependentUpon>
+    <Compile Include="ApproveLoan.aspx.cs">
+      <DependentUpon>ApproveLoan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Error.aspx.designer.cs">
-      <DependentUpon>Error.aspx</DependentUpon>
+    <Compile Include="ApproveLoan.aspx.designer.cs">
+      <DependentUpon>ApproveLoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.designer.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewExpense.aspx.cs">
+      <DependentUpon>NewExpense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewExpense.aspx.designer.cs">
+      <DependentUpon>NewExpense.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageExpenses.aspx.cs">
+      <DependentUpon>ManageExpenses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageExpenses.aspx.designer.cs">
+      <DependentUpon>ManageExpenses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDefault.aspx.cs">
+      <DependentUpon>AdminDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDefault.aspx.designer.cs">
+      <DependentUpon>AdminDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManagePayables.aspx.cs">
       <DependentUpon>ManagePayables.aspx</DependentUpon>
@@ -250,12 +284,12 @@
     <Compile Include="ManageInvestors.aspx.designer.cs">
       <DependentUpon>ManageInvestors.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default_1.aspx.cs">
-      <DependentUpon>Default_1.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default_1.aspx.designer.cs">
-      <DependentUpon>Default_1.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -341,7 +375,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
-          <DevelopmentServerPort>8080</DevelopmentServerPort>
+          <DevelopmentServerPort>80</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

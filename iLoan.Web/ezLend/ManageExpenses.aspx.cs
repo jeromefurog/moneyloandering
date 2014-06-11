@@ -12,7 +12,7 @@ using LoanMac.Core.Service;
 
 namespace ezLend
 {
-    public partial class ManageWithdrawals : System.Web.UI.Page
+    public partial class ManageExpenses : System.Web.UI.Page
     {
         WithdrawalService newService = new WithdrawalService();
 
@@ -45,7 +45,7 @@ namespace ezLend
 
         protected void btnNew_Click(object sender, EventArgs e)
         {
-            Response.Redirect(string.Format("NewWithdrawal.aspx?id={0}", Utility.EncryptQueryString(HttpUtility.UrlEncode("-1"))));
+            Response.Redirect(string.Format("NewExpense.aspx?id={0}", Utility.EncryptQueryString(HttpUtility.UrlEncode("-1"))));
         }
 
         private void PopulateGrid()
@@ -53,7 +53,7 @@ namespace ezLend
 
             string query = this.txtSearch.Text.Trim();
 
-            DataView dtVw = newService.GetAll(query,0);
+            DataView dtVw = newService.GetAll(query,1);
             if (dtVw != null)
             {
                 grdView.DataSource = dtVw;

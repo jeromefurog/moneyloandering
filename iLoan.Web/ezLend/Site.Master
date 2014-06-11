@@ -128,7 +128,27 @@
                           <li><asp:LinkButton ID="LinkButton1" runat='server' onclick="aLogout_Click">Sign Out</asp:LinkButton></li>
                         </ul>
                       </li>
-                    </ul>			
+                    </ul>	
+                    
+                    <ul id="ulAlerts" runat="server" class="nav navbar-nav navbar-right not-nav">
+                      
+                      <li class="button dropdown">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span class="bubble"><asp:Label ID="lblCount" runat="server"></asp:Label></span></a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <div class="nano nscroller">
+                              <div class="content">
+                                <ul id="dvAlerts" runat="server">
+                                  
+                                </ul>
+                              </div>
+                            </div>
+                            <%--<ul class="foot"><li><a href="#">View all activity </a></li></ul> --%>          
+                          </li>
+                        </ul>
+                      </li>
+                      		
+                    </ul>		
                     
 
               </div><!--/.nav-collapse -->
@@ -141,12 +161,13 @@
 			    <div class="cl-navblock">
 				    <ul class="cl-vnavigation">
 					    <li><a href="Default.aspx"><i class="fa fa-home"></i>Dashboard</a></li>
-                        <!--<li id='liAdminDashboard' runat='server'><a href="AdminDefault.aspx"><i class="fa fa-home"></i>Admin Dashboard</a></li>-->
+                        <li id='liAdminDashboard' runat='server'><a href="AdminDefault.aspx"><i class="fa fa-home"></i>Admin Dashboard</a></li>
 					    <li id='liUsers' runat='server'><a href="ManageUsers.aspx"><i class="fa fa-user"></i>Users</a></li>
                         <li id='liInvestments' runat='server'><a href="ManageInvestors.aspx"><i class="fa fa-money"></i>Investments</a></li>
                         <li id='liLoans' runat='server'><a href="ManageLoans.aspx"><i class="fa fa-credit-card"></i>Loans</a></li>
                         <li id='liPayables' runat='server'><a href="ManagePayables.aspx"><i class="fa fa-suitcase"></i>Payables</a></li>
                         <li id='liWithdrawals' runat='server'><a href="ManageWithdrawals.aspx"><i class="fa fa-external-link"></i>Withdrawals</a></li>
+                        <li id='liExpenses' runat='server'><a href="ManageExpenses.aspx"><i class="fa fa-wrench"></i>Expenses</a></li>
                         <li id='li2' runat='server'><asp:LinkButton ID="LinkButton3" runat='server' onclick="aLogout_Click"><i class="fa fa-sign-out"></i>Sign Out</asp:LinkButton></li>                        
                         
 				    </ul>

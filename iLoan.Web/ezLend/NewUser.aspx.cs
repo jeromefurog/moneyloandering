@@ -32,10 +32,11 @@ namespace ezLend
                 if (!GlobalObjects.IsAdmin)
                 {
                     hdAdmin.Value = "1";
+                    Response.Redirect("Default.aspx");
 
                 }
                 else {
-                    hdAdmin.Value = "0";
+                    hdAdmin.Value = "0";                    
                 }
 
                 if (!IsPostBack)

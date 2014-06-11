@@ -10,79 +10,61 @@
 namespace ezLend {
     
     
-    public partial class Default {
+    public partial class AdminDefault {
         
         /// <summary>
-        /// dvHead control.
+        /// lblTotalInvestments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvHead;
+        protected global::System.Web.UI.WebControls.Label lblTotalInvestments;
         
         /// <summary>
-        /// drpUser control.
+        /// lblEarnings control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpUser;
+        protected global::System.Web.UI.WebControls.Label lblEarnings;
         
         /// <summary>
-        /// dvAlert control.
+        /// lblCashOnHand control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvAlert;
+        protected global::System.Web.UI.WebControls.Label lblCashOnHand;
         
         /// <summary>
-        /// txtSearch control.
+        /// lblTotalWithdrawals control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearch;
+        protected global::System.Web.UI.WebControls.Label lblTotalWithdrawals;
         
         /// <summary>
-        /// btnSearch control.
+        /// lblTotalLoan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.Label lblTotalLoan;
         
         /// <summary>
-        /// grdView control.
+        /// lblTotalCollectable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdView;
-        
-        /// <summary>
-        /// hdId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdId;
-        
-        /// <summary>
-        /// btnNew control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNew;
+        protected global::System.Web.UI.WebControls.Label lblTotalCollectable;
         
         /// <summary>
         /// grdView1 control.
@@ -92,5 +74,14 @@ namespace ezLend {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdView1;
+        
+        /// <summary>
+        /// hdInvestmentChart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdInvestmentChart;
     }
 }

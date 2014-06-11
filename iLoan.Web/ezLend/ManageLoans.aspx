@@ -99,7 +99,14 @@
                                     </asp:BoundField>
                                     <asp:BoundField Visible="true" HeaderText="Penalty" DataField="penalty">
                                         <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                    </asp:BoundField>                                    
+                                    </asp:BoundField>    
+                                    <asp:TemplateField HeaderText="Progress" ItemStyle-HorizontalAlign="Center">
+                                        <ItemTemplate>   
+                                            <div class="progress">
+							                  <div class="progress-bar progress-bar-info" style="width: <%# Eval("Progress") %>%"><%# Eval("total_paid") %>/<%# Eval("total_payments") %></div>
+							                </div>                                 
+                                        </ItemTemplate>
+                                    </asp:TemplateField>                                  
                                     <asp:TemplateField HeaderText="Fully Paid" ItemStyle-HorizontalAlign="Center">
                                         <ItemTemplate>                                            
                                                 <span class="label "><%# Eval("fully_paid") %></span></td>                                 

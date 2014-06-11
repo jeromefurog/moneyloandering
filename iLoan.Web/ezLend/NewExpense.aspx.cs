@@ -12,7 +12,7 @@ using System.Data;
 
 namespace ezLend
 {
-    public partial class NewWithdrawal : System.Web.UI.Page
+    public partial class NewExpense : System.Web.UI.Page
     {
         int id = 0;
         WithdrawalEntity newEntity = new WithdrawalEntity();
@@ -32,14 +32,14 @@ namespace ezLend
 
                 if (!IsPostBack)
                 {
-                    LoadInvestors(0);
+                    
 
                     if (id != -1)
                     {
                         PopulateFields(id);
                     }
 
-                    hdId.Value = id.ToString();
+                    
                 }
 
 
@@ -49,26 +49,7 @@ namespace ezLend
 
         }
 
-        private void LoadInvestors(int id)
-        {
-
-            DataTable oTable = newService.GetInvestors(id);
-
-            if (id == 0)
-            {
-
-                oTable.DefaultView.RowFilter = " amount > 0 ";
-            }
-
-            ddlInvestor.DataSource = oTable.DefaultView;
-            ddlInvestor.DataTextField = "name";
-            ddlInvestor.DataValueField = "id";
-            ddlInvestor.DataBind();
-
-            ddlInvestor.Items.Insert(0, new ListItem("-- Select --", "0"));
-            ddlInvestor.SelectedIndex = 0;
-
-        }
+        
 
 
         private void PopulateFields(int id)
@@ -84,9 +65,7 @@ namespace ezLend
             this.txtAmount.Text = newEntity.Amount.ToString();
 
 
-            LoadInvestors(-1);
-            ddlInvestor.SelectedValue = newEntity.Userid.ToString();
-
+            
 
             //ddlInvestor.Enabled = false;
             //txtDate.Enabled = false;
@@ -118,32 +97,10 @@ namespace ezLend
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ManageWithdrawals.aspx");
+            Response.Redirect("ManageExpenses.aspx");
         }
 
-
-        protected void ddlInvestor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(ddlInvestor.SelectedValue);
-
-            if (id > 0)
-            {
-                DataTable oTable = newService.GetInvestors(id);
-
-                if (oTable.Rows.Count > 0)
-                {
-                    DataRow oRow = oTable.Rows[0];
-                    string amt = oRow["amount"].ToString();
-                    hdTotalAmount.Value = string.Format("{0}", amt);
-                }
-            }
-            else
-            {
-
-                hdTotalAmount.Value = string.Empty;
-                txtAmount.Text = string.Empty;
-            }
-        }
+                
 
         private void Create()
         {
@@ -152,13 +109,13 @@ namespace ezLend
 
             newEntity.Amount = Convert.ToDecimal(this.txtAmount.Text.Trim());
             newEntity.Date = Convert.ToDateTime(this.txtDate.Text.Trim());
-            newEntity.Userid = Convert.ToInt32(ddlInvestor.SelectedValue);
+            newEntity.Userid = GlobalObjects.User.ID;
             newEntity.Notes = this.txtNotes.Text.Trim();
             newEntity.Status = 1;
 
-            newService.Save(ActionType.Create, newEntity,0);
+            newService.Save(ActionType.Create, newEntity,1);
 
-            Response.Redirect("ManageWithdrawals.aspx");
+            Response.Redirect("ManageExpenses.aspx");
 
         }
 
@@ -171,7 +128,7 @@ namespace ezLend
             newEntity.Date = Convert.ToDateTime(txtDate.Text);
             newService.Save(ActionType.Update, newEntity);
 
-            Response.Redirect("ManageWithdrawals.aspx");
+            Response.Redirect("ManageExpenses.aspx");
 
         }
 
@@ -181,12 +138,7 @@ namespace ezLend
             bool retVal = true;
             string errorMsg = string.Empty;
 
-
-            if (Convert.ToInt32(this.ddlInvestor.SelectedValue) == 0)
-            {
-                errorMsg = errorMsg + "Investor is required. ";
-                retVal = false;
-            }
+                       
 
             if (Convert.ToDecimal(this.txtAmount.Text) <= 0)
             {

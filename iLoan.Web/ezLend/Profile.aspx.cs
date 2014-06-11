@@ -23,6 +23,7 @@ namespace ezLend
             {
                 if (Request.QueryString["id"] == null) { Response.Redirect("Default.aspx"); } else { this.id = Convert.ToInt32(Utility.DecryptQueryString(HttpUtility.UrlDecode(Request.QueryString["id"]))); }
 
+                
                 if (id == -1)
                 {
                     Response.Redirect("Default.aspx");
@@ -63,7 +64,7 @@ namespace ezLend
                 imPicture.ImageUrl = "~/images/default_pic.png";
             }
 
-            if (GlobalObjects.IsAdmin || newEntity.ID == id)
+            if (GlobalObjects.IsAdmin)
             {
                 btnEdit.Visible = true;
             }

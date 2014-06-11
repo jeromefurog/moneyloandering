@@ -11,7 +11,7 @@ using System.Web.Security;
 
 namespace ezLend
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class ForgetPassword : System.Web.UI.Page
     {
         UserService serv = new UserService();
 
@@ -22,42 +22,39 @@ namespace ezLend
 
         protected void submit_Click(object sender, EventArgs e)
         {
+            serv = new UserService();
 
+            string email = txtEmail.Text.Trim();
+            string password = serv.GetPassword(email);
 
-            UserEntity user = serv.Authenticate(this.iUsername.Text.Trim(), this.iPassword.Text.Trim());
-            if (user.ID > 0)
+            if (String.IsNullOrEmpty(password))
             {
-                GlobalObjects.SessionKey = System.Guid.NewGuid().ToString();
+                ClientScript.RegisterStartupScript(GetType(), "UserMsg", "<script>alert('Oooppss, email does not exist yet...');if(alert){ window.location='ForgetPassword.aspx';}</script>");
+                
+                
+            } else {
+                string body = string.Format(@"<p>Hi there old champ,</p> 
+                            <p>Here is you precious password that you seem to forgot: <strong>{0}</strong></p> 
+                            <p>Please don't forget it again, ok? Good, have a nice day!</p>
+                            <p>Thanks!</p>", password);
 
-                Session["userid"] = user.ID;
-                //Session["sessionkey"] = GlobalObjects.SessionKey;
+                Utility.Send("MoneyLoandering.com - Forgot Password", body, email, true);
 
-
-                //if (this.chkRememberMe.Checked)
-                //{
-                //    RememberMe(user.UserName);
-                //}
-
-
-                Response.Redirect("Default.aspx");
-            }
-            else
-            {
-
-                //hdError.Value = "You're not authorized to access the portal";
-                Response.Redirect("Login.aspx");
-            }
+                ClientScript.RegisterStartupScript(GetType(), "UserMsg", "<script>alert('Password Successfully Sent. Please check your email for the password.');if(alert){ window.location='Login.aspx';}</script>");
+                
+                
+            }            
 
 
         }
 
-        protected void reset_Click(object sender, EventArgs e)
+        protected void cancel_Click(object sender, EventArgs e)
         {
-            
-            
 
-                //hdError.Value = "You're not authorized to access the portal";
-            Response.Redirect("ForgetPassword.aspx");
+
+
+            //hdError.Value = "You're not authorized to access the portal";
+            Response.Redirect("Login.aspx");
 
         }
 

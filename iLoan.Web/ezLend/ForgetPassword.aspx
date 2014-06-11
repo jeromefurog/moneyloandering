@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ezLend.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForgetPassword.aspx.cs" Inherits="ezLend.ForgetPassword" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,28 +40,29 @@
 			    <div>
 				    <form id="form1" runat="server" style="margin-bottom: 0px !important;" class="form-horizontal">
 					    <div class="content">
-						    <h4 class="title">Login Access</h4>
-							    <div class="form-group">
-								    <div class="col-sm-12">
-									    <div class="input-group">
-										    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-										    <asp:TextBox ID="iUsername" runat="server" required type="text" placeholder="Username" class="form-control"></asp:TextBox>
-									    </div>
-								    </div>
-							    </div>
-							    <div class="form-group">
-								    <div class="col-sm-12">
-									    <div class="input-group">
-										    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-										    <asp:TextBox id="iPassword" runat="server" type="password" placeholder="Password" class="form-control"></asp:TextBox>
-									    </div>
-								    </div>
-							    </div>
+						    <h5 class="title text-center"><strong>Forgot your password?</strong></h5>
+                            <p class="text-center">Don't worry, we'll send you an email for your password.</p>
+                            <hr>
+
+              
+							<div class="form-group">
+								<div class="col-sm-12">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        <asp:TextBox id="txtEmail" runat="server" type="email" name="email" parsley-trigger="change" parsley-error-container="#email-error" required="" placeholder="Your Email" class="form-control"></asp:TextBox>
+										
+									</div>
+                                    <div id="email-error"></div>
+								</div>
+							</div>
+                            <%--<p class="spacer text-center">Don't remember your email? <a href="http://foxypixel.net/cleanzone/pages-forgot-password.html#">Contact Support</a>.</p>--%>
+                            
+                            <div class="foot">			
+                                <asp:Button ID="btnCancel" class="btn btn-default" runat="server" formnovalidate Text="Cancel" onclick="cancel_Click" />   
+                            			    
+                                <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" Text="Reset Password" onclick="submit_Click" />
+					        </div>
 							
-					    </div>
-					    <div class="foot">			                            	
-                            <asp:Button ID="btnReset" class="btn btn-default" runat="server" formnovalidate Text="Forgot Password?" onclick="reset_Click" />	    
-                            <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" Text="Log In" onclick="submit_Click" />
 					    </div>
 				    </form>
 			    </div>
