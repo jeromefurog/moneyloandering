@@ -1,7 +1,0 @@
-D:\Solutions\iLoan\iLoan.Web\LoanMac\bin\LoanMac.dll
-D:\Solutions\iLoan\iLoan.Web\LoanMac\bin\LoanMac.pdb
-D:\Solutions\iLoan\iLoan.Web\LoanMac\obj\Debug\ResolveAssemblyReference.cache
-D:\Solutions\iLoan\iLoan.Web\LoanMac\obj\Debug\LoanMac.dll
-D:\Solutions\iLoan\iLoan.Web\LoanMac\obj\Debug\LoanMac.pdb
-D:\Solutions\iLoan\iLoan.Web\LoanMac\bin\iLoan.Core.dll
-D:\Solutions\iLoan\iLoan.Web\LoanMac\bin\iLoan.Core.pdb

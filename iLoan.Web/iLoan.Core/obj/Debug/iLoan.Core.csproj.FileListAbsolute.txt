@@ -1,5 +1,0 @@
-D:\Solutions\iLoan\iLoan.Web\iLoan.Core\bin\Debug\iLoan.Core.dll
-D:\Solutions\iLoan\iLoan.Web\iLoan.Core\bin\Debug\iLoan.Core.pdb
-D:\Solutions\iLoan\iLoan.Web\iLoan.Core\obj\Debug\ResolveAssemblyReference.cache
-D:\Solutions\iLoan\iLoan.Web\iLoan.Core\obj\Debug\iLoan.Core.dll
-D:\Solutions\iLoan\iLoan.Web\iLoan.Core\obj\Debug\iLoan.Core.pdb
